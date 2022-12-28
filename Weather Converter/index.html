@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+     <div id="container">
+    <h1>Temperature Converter</h1>
+    <form>
+      Enter Degrees:
+      <input type="text" id="temp">
+      <br><br>
+      Select Type:
+      <select id="unit">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+      <br><br>
+      <button type="button" onclick="convertTemperature()">Convert</button>
+    </form>
+    <br>
+    Result: <span id="result"></span>
+    <br>
+    <br>
+    <script>
+      function convertTemperature() {
+        // Get temperature and unit from input fields
+        var temp = document.getElementById("temp").value;
+        var unit = document.getElementById("unit").value;
+        
+        // Validate input
+        if (isNaN(temp)) {
+          alert("Please enter a valid temperature.");
+          return;
+        }
+        
+        // Convert temperature
+        var result = 0;
+        if (unit == "celsius") {
+          result = temp + " &deg;C = " + (temp * 9 / 5 + 32) + " &deg;F = " + (temp + 273.15) + " K";
+        } else if (unit == "fahrenheit") {
+          result = temp + " &deg;F = " + ((temp - 32) * 5 / 9) + " &deg;C = " + ((temp - 32) * 5 / 9 + 273.15) + " K";
+        } else if (unit == "kelvin") {
+          result = temp + " K = " + (temp - 273.15) + " &deg;C = " + ((temp - 273.15) * 9 / 5 + 32) + " &deg;F";
+        }
+        
+        // Display result
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+    </div>
+  </body>
+</html>
