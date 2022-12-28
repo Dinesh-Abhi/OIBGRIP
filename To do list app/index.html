@@ -1,0 +1,75 @@
+<html>
+<!-- HTML structure of the app -->
+<div id="app">
+  <h1>To-Do List</h1>
+  <form id="add-task-form">
+    <input type="text" id="new-task" placeholder="Add a new task">
+    <button type="submit">Add</button>
+  </form>
+  <h2>Pending Tasks</h2>
+  <ul id="pending-tasks">
+    <!-- Pending tasks will be added here -->
+  </ul>
+  <h2>Completed Tasks</h2>
+  <ul id="completed-tasks">
+    <!-- Completed tasks will be added here -->
+  </ul>
+</div>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+  
+
+
+<!-- JavaScript for adding functionality to the app -->
+<script>
+  // Get references to the form, input field, and lists
+  const form = document.querySelector("#add-task-form");
+  const input = document.querySelector("#new-task");
+  const pendingTasksList = document.querySelector("#pending-tasks");
+  const completedTasksList = document.querySelector("#completed-tasks");
+
+  // Add a new task to the pending tasks list when the form is submitted
+  form.addEventListener("submit", event => {
+    // Prevent the form from being submitted
+    event.preventDefault();
+
+    // Get the value of the input field
+    const task = input.value;
+
+    // Don't do anything if the input field is empty
+    if (task === "") return;
+
+    // Create a new list item with the task description and action buttons
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <span class="task-description">${task}</span>
+      <div class="task-actions">
+        <button class="complete-button">Complete</button>
+        <button class="delete-button">Delete</button>
+      </div>
+    `;
+
+    // Add the new list item to the pending tasks list
+    pendingTasksList.appendChild(li);
+
+    // Clear the input field
+    input.value = "";
+
+    // Add a click event listener to the complete button
+    const completeButton = li.querySelector(".complete-button");
+    completeButton.addEventListener("click", event => {
+      // Move the task to the completed tasks list
+      completedTasksList.appendChild(li);
+    });
+
+    // Add a click event listener to the delete button
+    const deleteButton = li.querySelector(".delete-button");
+    deleteButton.addEventListener("click", event => {
+      // Remove the task from the list
+      li.remove();
+    });
+  });
+</script>
+</html>

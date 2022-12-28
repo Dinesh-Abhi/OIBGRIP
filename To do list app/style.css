@@ -1,0 +1,115 @@
+#app {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#app {
+  background-color: #f0f0f0; /* light grey */
+}
+
+h1 {
+  color: steelblue;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin: 10px 0;
+}
+.task-description {
+  display: inline-block;
+  width: 70%;
+  text-align: left;
+}
+.task-actions {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+}
+.complete-button {
+  background: lightgreen;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.delete-button {
+  background: tomato;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+
+/* Use a modern font for the action buttons */
+button {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Style the complete button */
+.complete-button {
+  background-color: lightgreen;
+  color: white;
+}
+
+/* Style the delete button */
+.delete-button {
+  background-color: tomato;
+  color: white;
+}
+
+/* Change the hover effect of the action buttons */
+button:hover {
+  background-color: darkgrey;
+}
+/* Change the background color of the page */
+body {
+  background-color: #f0f0f0; /* light grey */
+}
+
+
+/* Style the input field */
+#new-task {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: #f0f0f0; /* light grey */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the input field on focus */
+#new-task:focus {
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Style the pending tasks list */
+#pending-tasks {
+  list-style: none;
+  padding: 0;
+  background-color: #f0f0f0; /* light grey */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the completed tasks list */
+#completed-tasks {
+  list-style: none;
+  padding: 0;
+  background-color: #eee; /* light grey */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
